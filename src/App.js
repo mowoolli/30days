@@ -6,10 +6,9 @@ const Home = () => (
     <Link to="/about">Go to about</Link></div>
 )
 
-const About = () => (
+const About = ({ name }) => (
   <div>
-    <h1>About</h1>
-    <Link to="/">Go to home</Link>
+    <h1>This is some stuff about {name}</h1>
   </div>
 )
 
@@ -17,8 +16,27 @@ class App extends React.Component {
   render() {
     return (<Router>
       <Switch>
-        <Route path="/about" component={About} />
-        <Route path="/" component={Home} />
+        <Route path="/about"
+          render={renderProps => (
+            <div>
+              <Link to="/about/marc">Marc</Link>
+              <Link to="/about/zenka">Zenka</Link>
+              <Route path="/about/:name"
+                render={renderProps => (
+                  <div>
+                    <About name={renderProps.match.params.name} />
+                    <Link to="/">Go home</Link>
+                  </div>
+                )} />
+            </div>
+          )} />
+        <Route path="/"
+          render={renderProps => (
+            <div>
+              Home is below
+              <Home {...this.props} {...renderProps} />
+            </div>
+          )} />
       </Switch>
     </Router >)
   }
