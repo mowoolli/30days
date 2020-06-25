@@ -4,8 +4,8 @@ const a = [1, 10, 100, 1000, 10000];
 const App = props => {
   return (
     <ul>
-      {a.map(i => {
-        return <li key={i}>{i}</li>
+      {React.Children.map(a, i => {
+        return <li>{i}</li>
       })}
     </ul>
   )
