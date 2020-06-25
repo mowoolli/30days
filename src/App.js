@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import Content from './components/Content'
-import Header from './components/Header'
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <Content />
-      </div>
-    )
-  }
+const a = [1, 10, 100, 1000, 10000];
+const App = props => {
+  return (
+    <ul>
+      {a.map(i => {
+        return <li key={i}>{i}</li>
+      })}
+    </ul>
+  )
 }
 
 export default App;
