@@ -1,8 +1,13 @@
 import * as types from "./types"
 
-export const fetchNewTime = () => ({
+const host = "http://worldtimeapi.org/api/timezone"
+export const fetchNewTime = (timezone = "PST8PDT") => ({
   type: types.FETCH_NEW_TIME,
-  payload: new Date().toString()
+  payload: new Date().toString(),
+  meta: {
+    type: "api",
+    url: host + "/" + timezone
+  }
 })
 
 export const login = (user) => ({
