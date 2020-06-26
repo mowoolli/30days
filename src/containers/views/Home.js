@@ -4,7 +4,7 @@ import { fetchNewTime } from "../../redux/actionCreators"
 
 const mapStateToProps = state => {
   return {
-    currentTime: state.currentTime
+    currentTime: state.time.currentTime
   }
 }
 
