@@ -1,9 +1,15 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { connect } from "react-redux"
 
-const Home = () => (
+const mapStateToProps = state => {
+  return {
+    currentTime: state.currentTime
+  }
+}
+
+const Home = props => (
   <div><h1>Welcome home</h1>
-    <Link to="/about">Go to about</Link></div>
+    <p>Current time: {props.currentTime}</p></div>
 )
 
-export default Home
+export default connect(mapStateToProps)(Home)
