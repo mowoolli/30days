@@ -1,10 +1,8 @@
-import React from 'react'
-import { Link } from "react-router-dom"
+import React from 'react';
 
-const About = () => (
-  <div>
-    <h1>This is some stuff about</h1>
-    <Link to="/">Go home</Link>
+export const About = (props) => (
+  <div className='about'>
+    <h1>About us</h1>
   </div>
 )
 

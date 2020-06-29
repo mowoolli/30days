@@ -1,21 +1,9 @@
-import React from 'react'
-import { connect } from "react-redux"
-import { fetchNewTime } from "../../redux/actionCreators"
+import React from "react";
 
-const mapStateToProps = state => {
-  return {
-    currentTime: state.currentTime.currentTime
-  }
-}
+export const Home = ({ auth }) => (
+  <div className="home">
+    <h1>{auth.isLoggedIn ? "Welcome home!" : "You need to know the secret"}</h1>
+  </div>
+);
 
-const mapDispatchToProps = dispatch => ({
-  updateTime: () => dispatch(fetchNewTime())
-})
-
-const Home = props => (
-  <div><h1>Welcome home</h1>
-    <p>Current time: {props.currentTime}</p>
-    <button onClick={props.updateTime}>Update time</button></div>
-)
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default Home;
