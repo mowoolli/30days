@@ -1,10 +1,11 @@
-const { expectation } = require("sinon")
+import React from "react"
+import TestUtils from "react-dom/test-utils"
+
+import Timeline from "../Timeline"
 
 describe("Timeline", () => {
-  it("passing test", () => {
-    expect(true).toBeTruthy()
-  })
-  it("failing test", () => {
-    expect(false).toBeFalsy()
+  it("wraps content in a div with .notificationsFrame class", () => {
+    const wrapper = TestUtils.renderIntoDocument(<Timeline />)
+    const node = TestUtils.findRenderedDOMComponentWithClass(wrapper, "notificationsFrame")
   })
 })
