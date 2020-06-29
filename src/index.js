@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Root from './containers/Root';
+// import Root from './containers/Root';
+import Timeline from './containers/components/Timeline'
 import * as serviceWorker from './serviceWorker';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Root />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 
 ReactDOM.render(
   <React.StrictMode>
-    <Root />
+    <Timeline />
   </React.StrictMode>,
   document.getElementById('root')
 );
